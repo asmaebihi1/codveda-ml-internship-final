@@ -2,8 +2,8 @@
 
 My completed tasks for the Codveda Machine Learning internship, built with Python, pandas, scikit-learn and TensorFlow/Keras in Google Colab. Every notebook is saved with its outputs and charts.
 
-**Video walkthrough:** [ADD YOUR LINKEDIN VIDEO LINK]
-**LinkedIn post:** [ADD YOUR LINKEDIN POST LINK]
+
+**LinkedIn post:** (https://lnkd.in/p/e29NEuGu)
 
 ## Project structure
 
@@ -44,9 +44,18 @@ To run locally instead: `pip install -r requirements.txt` and open the notebooks
 
 ## What I learned
 
-[Write 3-5 sentences: e.g. why the train/test split must come before scaling (data leakage), how pruning reduces overfitting, how the RBF kernel and the neural network capture non-linear patterns.]
+## What I learned
+
+- **Data preparation comes first.** I learned to split the data into train and test sets *before* imputing and scaling, so that no information from the test set leaks into training. Handling missing values, one-hot encoding and standardization turned the raw House Prices data (73 columns) into 264 clean numeric features.
+- **A good score is not enough, I also have to interpret it.** My linear regression reached R² = 0.885, but the largest coefficients came from very rare categories, so I learned to be careful when reading one-hot coefficients. For logistic regression, odds ratios gave me a way to explain which features push a prediction up or down.
+- **Overfitting is real and measurable.** An unpruned decision tree scored 100% on training data but only 93.3% on test data. After pruning, the tree was simpler and reached 97.8% on test. For KNN, choosing K showed me the trade-off between a model that is too flexible and one that is too smooth.
+- **Accuracy alone can hide mistakes.** On the tumor classification task I looked at precision, recall, the confusion matrix and the ROC curve, because missing a malignant tumor matters more than a small drop in accuracy.
+- **Tuning and validation make results trustworthy.** With GridSearchCV and cross-validation, my Random Forest reached an F1 score of 0.968. I also compared linear and RBF kernels for the SVM (97.4% vs 98.2% accuracy) and saw that the extra complexity only helps a little on this dataset.
+- **Neural networks learn from raw pixels.** A simple Keras network reached 97.71% test accuracy on MNIST, and the training and validation loss curves helped me check for overfitting.
+
+Next, I want to practice feature engineering, handle imbalanced data, and try convolutional neural networks.
 
 ## Contact
 
-[Your name] - [LinkedIn profile link]
+Asmae Bihi - https://www.linkedin.com/in/asmae-bihi/.
 Internship by [@Codveda](https://www.linkedin.com/company/codveda)
